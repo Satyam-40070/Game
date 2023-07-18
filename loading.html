@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Loading Page</title>
+  <style>
+    body {
+      background-color: #79a26a;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    
+    h1 {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    
+    p {
+      font-size: 18px;
+    }
+    
+    .instruct {
+      text-align: justify;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 10px;
+    }
+    
+    li {
+      padding-top: 10px;
+      display: flex;
+      align-items: center;
+    }
+    
+    img {
+      height: 25px;
+      width: 25px;
+    }
+    
+    .loading-icon img {
+      height: 50px;
+      width: 50px;
+      justify-content: center;
+    }
+    
+    .loading-icon img:hover {
+      height: 70px;
+      width: 70px;
+    }
+    
+    #loader {
+      display: none;
+      height: 50px;
+      width: 50px;
+      margin: 0 auto;
+    }
+    
+    #goButton {
+      display: none;
+      height: 50px;
+      width: 90px;
+      margin: 0 auto;
+      border-radius: 100%;
+    }
+    
+    @media only screen and (min-width: 350px) and (max-width: 434px) {
+      .instruct {
+        max-width: none;
+        margin-right: 10%;
+      }
+    }
+    @media only screen and (min-width: 600px) and (max-width: 1190px) {
+      .instruct {
+        max-width: none;
+        margin-right: 20%;
+
+      }
+    }
+    @media only screen and (min-width: 800px) and (max-width: 1380px) {
+      .instruct {
+        max-width: none;
+        margin-left: 23%;
+      }
+    }
+  </style>
+  <script>
+    function showLoader() {
+      document.getElementById('loader').style.display = 'block';
+      setTimeout(showGoButton, 3000); // Adjust the delay (in milliseconds) as per your GIF length
+    }
+  
+    function showGoButton() {
+      document.getElementById('loader').style.display = 'none';
+      document.getElementById('goButton').style.display = 'block';
+    }
+  </script>
+</head>
+<body>
+  <h1>Loading Game</h1>
+  <img id="loader" src="assets/images/load321.gif" alt="Loading..." />
+  <button id="goButton" onclick="location.href='main.html'">Let's Go</button>
+  <p>Please wait while we prepare the gaming experience for you.</p>
+  <p>In the meantime, let's learn about the different color dustbins and their use:</p>
+  <div class="instruct">
+    <ul>
+      <li>
+        <img src="assets/images/redbin.png" alt="Red Dustbin">
+        RED DUSTBIN- PUT ALL THE THINGS MADE FROM PLASTIC FROM IN THIS DUSTBIN.
+
+      </li>
+      <li>
+        <img src="assets/images/bluebin.png" alt="Blue Dustbin">
+        BLUE DUSTBIN -PUT ALL THE THINGS MADE FROM GLASS IN THIS DUSTBIN.
+      </li>
+      <li>
+        <img src="assets/images/yp.png" alt="Yellow Dustbin">
+        YELLOW DUSTBIN - PUT ALL THE THINGS MADE FROM METAL IN THIS DUSTBIN.
+
+      </li>
+      <li>
+        <img src="assets/images/greenbin.png" alt="Green Dustbin">
+        GREEN DUSTBIN -  PUT ALL THE THINGS MADE FROM PAPER IN THIS DUSTIN.
+
+      </li>
+    </ul>
+  </div>
+  <script>
+    window.onload = showLoader;
+  </script>
+</body>
+</html>
